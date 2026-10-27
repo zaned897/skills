@@ -1,0 +1,6 @@
+{
+  "name": "kit-multiagente",
+  "version": "1.0.0",
+  "description": "Las skills comunes del kit multiagente para usarlas en cualquier proyecto de Claude Code.",
+  "author": { "name": "zaned897" }
+}

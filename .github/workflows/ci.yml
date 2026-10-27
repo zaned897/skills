@@ -1,0 +1,30 @@
+name: Kit
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  revisar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: bash -n setup.sh install.sh template/scripts/*.sh scripts/*.sh
+      - run: python -m py_compile template/tools/agentes/*.py
+      - run: cd template && python tools/agentes/sincronizar-skills.py --check
+      - run: ./scripts/armar-plugin.sh --check
+      - run: cmp template/tools/agentes/plantillas/agentes.yml template/.github/workflows/agentes.yml
+      - run: python -c "import json; [json.load(open(p)) for p in ['.claude-plugin/marketplace.json','plugin/.claude-plugin/plugin.json','template/.claude/settings.json']]"
+      - name: Instalar y actualizar en un repo vacío
+        run: |
+          git config --global user.email ci@example.com; git config --global user.name ci
+          mkdir /tmp/t && cd /tmp/t && git init -q
+          KIT_SRC="$GITHUB_WORKSPACE" bash "$GITHUB_WORKSPACE/setup.sh"
+          test -f .kit-version && test -f .agents/skills/orchestrate/SKILL.md
+          echo "cambio local" >> AGENTS.md; echo "0.0.0" > .kit-version
+          echo "viejo" > .agents/skills/relay/SKILL.md
+          KIT_SRC="$GITHUB_WORKSPACE" bash "$GITHUB_WORKSPACE/setup.sh"
+          grep -q "cambio local" AGENTS.md
+          cmp .agents/skills/relay/SKILL.md "$GITHUB_WORKSPACE/template/.agents/skills/relay/SKILL.md"
+          python3 tools/agentes/sincronizar-skills.py --check

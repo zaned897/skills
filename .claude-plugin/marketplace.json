@@ -1,0 +1,11 @@
+{
+  "name": "kit-multiagente",
+  "owner": { "name": "zaned897" },
+  "plugins": [
+    {
+      "name": "kit-multiagente",
+      "source": "./plugin",
+      "description": "Flujo multiagente y normas de desarrollo: orquestar, PRs en paralelo, relevos, diseño primero, niveles de prototipo, anti vibe coding y más."
+    }
+  ]
+}
