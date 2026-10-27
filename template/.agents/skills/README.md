@@ -25,7 +25,8 @@ Fuente única para Claude Code, Codex y Antigravity. Se editan aquí y luego `py
 - Carpeta `<nombre>/SKILL.md`, en español, con `name` igual a la carpeta.
 - `description`: qué hace en una frase y luego «Úsala cuando…». Es lo único que el agente ve antes de cargarla.
 - Cuerpo corto (menos de ~100 líneas), reglas verificables, y al final `## Relacionadas`.
-- Nada propio de un proyecto (nombres, URLs, comandos de un stack): eso va en `AGENTS.md` o entre `{{marcadores}}`.
+- Nada propio de un proyecto (nombres, URLs, comandos de un stack): eso va en `AGENTS.md`. Las skills comunes **no se editan en cada repo**: `setup.sh` las reemplaza al actualizar. Lo único que se llena por repo es `delegar`.
+- Para una regla propia del proyecto, crea una skill con otro nombre (p. ej. `<proyecto>-backend`); `setup.sh` no la toca.
 
 ## Reglas que no se negocian
 - Mocks marcados; nunca datos inventados presentados como reales.

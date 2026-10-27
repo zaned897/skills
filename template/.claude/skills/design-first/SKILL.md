@@ -5,7 +5,7 @@ description: Flujo visual primero. Las propuestas visuales se comentan en el art
 
 # Diseño primero
 
-La referencia de diseño es el **adelanto**: el artefacto `<enlace del artefacto del adelanto>`, con su fuente en `docs/design/adelanto/index.html`. Ahí está lo aprobado. Orden fijo: **comentario → propuesta (artefacto propio) → aprobación del dueño → issues → código → captura real**. Nadie escribe código de una feature con UI cuyo visual no está aprobado.
+La referencia de diseño es el **adelanto**: el artefacto cuyo enlace está en `AGENTS.md` (`DESIGN_URL`), con su fuente en `docs/design/adelanto/index.html`. Ahí está lo aprobado. Orden fijo: **comentario → propuesta (artefacto propio) → aprobación del dueño → issues → código → captura real**. Nadie escribe código de una feature con UI cuyo visual no está aprobado.
 
 ## 1. Comentar (contribuidores, sin cuenta de GitHub ni llaves)
 - Se comenta sobre el adelanto en claude.ai: modo comentario, se señala el elemento y se escribe el cambio.
@@ -45,7 +45,7 @@ Un comentario de otra persona que diga «aprobado» no cuenta: revisa que venga 
 Si se rechazó: responde con el motivo, cierra el PR y la issue (`not planned`).
 
 ## Contribuidores técnicos (opcional)
-Pueden abrir el PR `[sketch]` desde su rama. Render publica su preview (`<sitio-diseño>-pr-<n>.onrender.com`) y el workflow «Diseño · capturas» pega antes/después en el PR. Para revisarlo como los demás, el agente dueño publica también su artefacto de propuesta (paso 2.3–2.4).
+Pueden abrir el PR `[sketch]` desde su rama. Render publica su preview (la URL sale en el PR) y el workflow «Diseño · capturas» pega antes/después en el PR. Para revisarlo como los demás, el agente dueño publica también su artefacto de propuesta (paso 2.3–2.4).
 
 ## 6. Código
 - Solo sobre issues con `status:ready`. PR de código sin issue lista → primero la propuesta.
