@@ -20,6 +20,7 @@ Fuente única para Claude Code, Codex y Antigravity. Se editan aquí y luego `py
 | Llega un PR | `pr-intake` | Revisión segura, sobre todo de forks |
 | Falta una herramienta | `scout` | Decidir si instalar algo y registrarlo |
 | Mantener la suite al día | `radar` | Modelos y herramientas nuevas, routing en `toolbox/models.md` |
+| Llega un colaborador que no programa | `onboarding` | Instalar, levantar, revisar PRs y primer PR siguiendo `ONBOARDING.md` |
 
 ## Formato de cada skill
 - Carpeta `<nombre>/SKILL.md`, en español, con `name` igual a la carpeta.
